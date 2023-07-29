@@ -1,4 +1,5 @@
-baseURL = 'https://mrlangzi123.github.io/'
+baseURL = 'https://mrlangzi123.github.io/
+'
 
 languageCode = 'zh-cn'
 title = 'Virgo'
