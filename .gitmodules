@@ -1,0 +1,3 @@
+[submodule "mysite/themes/virgo"]
+	path = mysite/themes/virgo
+	url = https://github.com/loveminimal/hugo-theme-virgo.git
