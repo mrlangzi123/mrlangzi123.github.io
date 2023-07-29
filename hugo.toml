@@ -31,7 +31,7 @@ hasCJKLanguage = false
     image = "/images/author.jpeg"
     # link of followme in author card and footer
     # 作者卡片里 followme 和页脚作者的链接
-    link = "https://github.com/xioyito"
+    link = "https://github.com/mrlangzi123"
 
 # Taxonomies, Currently, only the following 3 taxonomies are supported
 # If you don't want one of them，delete it in [menus] instead here
