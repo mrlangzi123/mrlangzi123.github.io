@@ -1,6 +1,4 @@
-baseURL = 'https://mrlangzi123.github.io/
-'
-
+baseURL = 'https://mrlangzi123.github.io/'
 languageCode = 'zh-cn'
 title = 'Virgo'
 
@@ -8,7 +6,7 @@ title = 'Virgo'
 theme = 'virgo'
 
 hasCJKLanguage = true
-summaryLength =
+summaryLength =11
 paginate = 11
 enableGitInfo = true
 
