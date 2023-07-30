@@ -1,5 +1,5 @@
 title = "Awesome Hugo blog"
-baseURL = 'https://blog.aw35.com/'
+baseURL = "https://mrlangzi123.github.io"
 
 # This is what goes in <html lang="">
 languageCode = 'en-us'
