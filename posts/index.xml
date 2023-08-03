@@ -39,7 +39,7 @@ To enable it, globally set toc to true in config.toml:
     </item>
     
     <item>
-      <title>Rich Content</title>
+      <title>源码编译mysql</title>
       <link>https://blog.aw35.com/posts/rich-content/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
       
