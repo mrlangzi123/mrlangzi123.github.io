@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.aw35.com/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.aw35.com/posts/table-of-content/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.aw35.com/posts/</loc>
+    <lastmod>2023-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.aw35.com/posts/rich-content/</loc>
+    <lastmod>2023-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.aw35.com/posts/table-of-content/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.aw35.com/posts/math-typesetting/</loc>
@@ -16,9 +19,6 @@
   </url><url>
     <loc>https://blog.aw35.com/posts/markdown-syntax/</loc>
     <lastmod>2023-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.aw35.com/posts/rich-content/</loc>
-    <lastmod>2023-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.aw35.com/posts/placeholder-text/</loc>
     <lastmod>2023-02-07T00:00:00+00:00</lastmod>
