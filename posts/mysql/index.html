@@ -177,7 +177,7 @@ stroke-linejoin="round" class="feather feather-home">
                 <summary><b>Table of Contents</b></summary>
                 <nav id="TableOfContents"></nav>
             </details><div class="page-content">
-                <pre tabindex="0"><code>#!/bin/bash
+                <pre><code>#!/bin/bash
 #配置初始安装环境，安装依赖包
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;&amp; yum makecache
 rpm -qa | grep mariadb
@@ -189,14 +189,14 @@ yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-de
 groups mysql &gt;&gt;/dev/null
 if [ $? == 0 ]
 then
-        echo &#34;mysql组已存在&#34;
+        echo &quot;mysql组已存在&quot;
 else
         groupadd -r mysql
 fi
 id mysql &gt;&gt;/dev/null
 if [ $? == 0 ]
 then
-        echo &#34;mysql用户已存在&#34;
+        echo &quot;mysql用户已存在&quot;
 else
         useradd -r -g mysql -s /bin/false -M mysql
 fi
@@ -225,7 +225,7 @@ cmake -DWITH_BOOST=/mysql/mysql-5.7.43/boost/boost_1_59_0 \
 -DWITH_SYSTEMD=1 \
 make -j $(grep processor /proc/cpuinfo | wc -l) &amp;&amp; make install
 
-echo &#34;export PATH=\$PATH:/usr/local/mysql/bin&#34; &gt;&gt;/etc/profile
+echo &quot;export PATH=\$PATH:/usr/local/mysql/bin&quot; &gt;&gt;/etc/profile
 source /etc/profile
 cat &gt; /etc/my.cnf&lt;&lt;EOF
 [mysqld]
@@ -245,6 +245,7 @@ systemctl daemon-reload
 systemctl enable mysqld
 systemctl start mysqld
 </code></pre>
+
             </div>
         </article></main>
 </div>
