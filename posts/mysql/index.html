@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Posts | Lang ZI blog</title>
-<meta property="og:title" content="Posts | Lang ZI blog" />
-<meta name="twitter:title" content="Posts | Lang ZI blog" />
-<meta itemprop="name" content="Posts | Lang ZI blog" />
-<meta name="application-name" content="Posts | Lang ZI blog" />
+<title itemprop="name">Mysql源码编译安装 | Lang ZI blog</title>
+<meta property="og:title" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta name="twitter:title" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta itemprop="name" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta name="application-name" content="Mysql源码编译安装 | Lang ZI blog" />
 <meta property="og:site_name" content="Lang Zi blog" />
 
 <meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
@@ -32,11 +32,6 @@
     
     
     
-    <link rel="first" href="/posts/" />
-    <link rel="last" href="/posts/" />
-    
-    
-    
 
     <meta property="og:type" content="article" />
     <meta property="og:article:published_time" content=2023-08-07T14:46:09&#43;0800 />
@@ -50,14 +45,14 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Posts",
+        "headline": "Mysql源码编译安装",
         "author": {
         "@type": "Person",
         "name": ""
         },
         "datePublished": "2023-08-07",
         "description": "",
-        "wordCount":  0 ,
+        "wordCount":  185 ,
         "mainEntityOfPage": "True",
         "dateModified": "2023-08-07",
         "image": {
@@ -76,9 +71,7 @@
 
     
 
-    <link rel="canonical" href="https://blog.aw35.com/posts/">
-    <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Lang ZI blog">
-    <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Lang ZI blog">
+    <link rel="canonical" href="https://blog.aw35.com/posts/mysql/">
     <link href="/style.min.840eada6dfddec7b8ccfcf867f039bf80b1f16a265ec6e01dc553a3dddc9d509.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -163,121 +156,96 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Posts</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2023</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Mysql源码编译安装</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-08-07T14:46:09&#43;08:00" itemprop="datePublished"> 7 Aug 2023 </time>
+                </div>
+                
+            </header>
+            <details class="toc">
+                <summary><b>Table of Contents</b></summary>
+                <nav id="TableOfContents"></nav>
+            </details><div class="page-content">
+                <pre tabindex="0"><code>#~/#!/usr/bin/env bash
+#!/bin/bash
+#配置初始安装环境，安装依赖包
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;&amp; yum makecache
+rpm -qa | grep mariadb
+rpm -e mariadb-libs --nodeps  #卸载mariadb以免与MySQL冲突
+rm -rf /etc/my*
+yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4
 
-        
+#监测用户和组是否存在，不存在则创建
+groups mysql &gt;&gt;/dev/null
+if [ $? == 0 ]
+then
+        echo &#34;mysql组已存在&#34;
+else
+        groupadd -r mysql
+fi
+id mysql &gt;&gt;/dev/null
+if [ $? == 0 ]
+then
+        echo &#34;mysql用户已存在&#34;
+else
+        useradd -r -g mysql -s /bin/false -M mysql
+fi
 
-        
+#Create DIRS
+mkdir /mysql /data
+mkdir /var/log/mysql
+mkdir /var/run/mysqld/
+chown -R mysql:mysql /usr/local/mysql /data  /var/run/mysqld/
+#Download Source code
+wget -O /mysql/mysql-boost-5.7.43.tar.gz  https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.43.tar.gz
+tar xvf /mysql/mysql-boost-5.7.43.tar.gz -C /mysql/
+cd /mysql/mysql-5.7.43
+cmake -DWITH_BOOST=/mysql/mysql-5.7.43/boost/boost_1_59_0 \
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+-DMYSQL_DATADIR=/data \
+-DSYSCONFDIR=/etc/ \
+-DDEFAULT_CHARSET=utf8 \
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DEXTRA_CHARSETS=all \
+-DMYSQL_UNIX_ADDR=/tmp/mysql.sock \
+-DWITH_MYISAM_STORAGE_ENGINE=1 \
+-DWITH_INNOBASE_STORAGE_ENGINE=1\
+-DWITH_ARCHIVE_STORAGE_ENGINE=1 \
+-DWITH_PARTITION_STORAGE_ENGINE=1 \
+-DWITH_SYSTEMD=1 \
+make -j $(grep processor /proc/cpuinfo | wc -l) &amp;&amp; make install
 
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/mysql/">Mysql源码编译安装</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-08-07T14:46:09&#43;0800">
-        7 Aug 2023
-    </time>
-</article>
+echo &#34;export PATH=\$PATH:/usr/local/mysql/bin&#34; &gt;&gt;/etc/profile
+source /etc/profile
+cat &gt; /etc/my.cnf&lt;&lt;EOF
+[mysqld]
+basedir=/usr/local/mysql
+datadir=/data/
+pid-file=/var/run/mysqld/mysqld.pid
+socket=/tmp/mysql.sock
+log-error=/var/logl/mysql/mysql.err
+EOF
+#initialize Mysql Databses
+rm -rf /data/*
+mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/data
 
+cp /usr/local/mysql/usr/lib/systemd/system/mysqld.service /usr/lib/systemd/system/
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/rich-content/">源码编译安装Mysql-5.7.43</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-08-03T00:00:00Z">
-        3 Aug 2023
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/table-of-content/">How to enable table of content ?</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-05-02T00:00:00Z">
-        2 May 2023
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/math-typesetting/">Math Typesetting</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-04-01T00:00:00Z">
-        1 Apr 2023
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/markdown-syntax/">Markdown Syntax Guide</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-02-11T00:00:00Z">
-        11 Feb 2023
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/placeholder-text/">Placeholder Text</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-02-07T00:00:00Z">
-        7 Feb 2023
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/emoji-support/">Emoji Support</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2023-02-01T00:00:00Z">
-        1 Feb 2023
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+systemctl daemon-reload
+systemctl enable mysqld
+systemctl start mysqld
+</code></pre>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
