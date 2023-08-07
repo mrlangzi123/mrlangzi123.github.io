@@ -3,17 +3,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name"> | Lang ZI blog</title>
-<meta property="og:title" content=" | Lang ZI blog" />
-<meta name="twitter:title" content=" | Lang ZI blog" />
-<meta itemprop="name" content=" | Lang ZI blog" />
-<meta name="application-name" content=" | Lang ZI blog" />
+<title itemprop="name">Mysql源码编译安装 | Lang ZI blog</title>
+<meta property="og:title" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta name="twitter:title" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta itemprop="name" content="Mysql源码编译安装 | Lang ZI blog" />
+<meta name="application-name" content="Mysql源码编译安装 | Lang ZI blog" />
 <meta property="og:site_name" content="Lang Zi blog" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Mysql源码编译安装脚本">
+<meta itemprop="description" content="Mysql源码编译安装脚本" />
+<meta property="og:description" content="Mysql源码编译安装脚本" />
+<meta name="twitter:description" content="Mysql源码编译安装脚本" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -34,9 +34,13 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=0001-01-01T00:00:00Z />
-    <meta property="article:published_time" content=0001-01-01T00:00:00Z />
+    <meta property="og:article:published_time" content=2023-08-07T14:46:09&#43;0800 />
+    <meta property="article:published_time" content=2023-08-07T14:46:09&#43;0800 />
 
+    
+    <meta property="og:article:author" content="Langzi" />
+    <meta property="article:author" content="Langzi" />
+    <meta name="author" content="Langzi" />
     
 
     
@@ -45,16 +49,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "",
+        "headline": "Mysql源码编译安装",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "0001-01-01",
-        "description": "",
-        "wordCount":  193 ,
+        "datePublished": "2023-08-07",
+        "description": "Mysql源码编译安装脚本",
+        "wordCount":  185 ,
         "mainEntityOfPage": "True",
-        "dateModified": "0001-01-01",
+        "dateModified": "2023-08-07",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -161,18 +165,19 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title"></h1>
+                <h1 class="header-title">Mysql源码编译安装</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-08-07T14:46:09&#43;08:00" itemprop="datePublished"> 7 Aug 2023 </time>
+                </div>
                 
             </header>
             <details class="toc">
                 <summary><b>Table of Contents</b></summary>
                 <nav id="TableOfContents"></nav>
             </details><div class="page-content">
-                <p>author: &ldquo;Langzi&rdquo;
-title: &ldquo;Mysql源码编译安装&rdquo;
-date: 2023-08-07T14:46:09+08:00
-description: &ldquo;Mysql源码编译安装脚本&rdquo;</p>
-<pre tabindex="0"><code>#~/#!/usr/bin/env bash
+                <pre tabindex="0"><code>#~/#!/usr/bin/env bash
 #!/bin/bash
 #配置初始安装环境，安装依赖包
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;&amp; yum makecache

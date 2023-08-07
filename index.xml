@@ -6,7 +6,16 @@
     <description>Recent content in Home on Lang ZI blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aw35.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 14:46:09 +0800</lastBuildDate><atom:link href="https://blog.aw35.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql源码编译安装</title>
+      <link>https://blog.aw35.com/posts/mysql/</link>
+      <pubDate>Mon, 07 Aug 2023 14:46:09 +0800</pubDate>
+      
+      <guid>https://blog.aw35.com/posts/mysql/</guid>
+      <description>#~/#!/usr/bin/env bash #!/bin/bash #配置初始安装环境，安装依赖包 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;amp;&amp;amp; yum makecache rpm -qa | grep mariadb rpm -e mariadb-libs --nodeps #卸载mariadb以免与MySQL冲突 rm -rf /etc/my* yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4 #监测用户和组是否存在，不存在则创建 groups mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql组已存在&amp;#34; else groupadd -r mysql fi id mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql用户已存在&amp;#34; else useradd -r -g mysql -s /bin/false -M mysql fi #Create DIRS mkdir /mysql /data mkdir /var/log/mysql mkdir /var/run/mysqld/ chown -R mysql:mysql /usr/local/mysql /data /var/run/mysqld/ #Download Source code wget -O /mysql/mysql-boost-5.</description>
+    </item>
+    
     <item>
       <title>源码编译安装Mysql-5.7.43</title>
       <link>https://blog.aw35.com/posts/rich-content/</link>
@@ -63,16 +72,6 @@ To enable it, globally set toc to true in config.toml:
       
       <guid>https://blog.aw35.com/posts/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://blog.aw35.com/posts/mysql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.aw35.com/posts/mysql/</guid>
-      <description>author: &amp;ldquo;Langzi&amp;rdquo; title: &amp;ldquo;Mysql源码编译安装&amp;rdquo; date: 2023-08-07T14:46:09+08:00 description: &amp;ldquo;Mysql源码编译安装脚本&amp;rdquo;
-#~/#!/usr/bin/env bash #!/bin/bash #配置初始安装环境，安装依赖包 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;amp;&amp;amp; yum makecache rpm -qa | grep mariadb rpm -e mariadb-libs --nodeps #卸载mariadb以免与MySQL冲突 rm -rf /etc/my* yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4 #监测用户和组是否存在，不存在则创建 groups mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql组已存在&amp;#34; else groupadd -r mysql fi id mysql &amp;gt;&amp;gt;/dev/null if [ $?</description>
     </item>
     
     <item>
