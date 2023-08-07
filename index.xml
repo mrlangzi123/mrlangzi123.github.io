@@ -13,8 +13,7 @@
       <pubDate>Mon, 07 Aug 2023 14:46:09 +0800</pubDate>
       
       <guid>https://blog.aw35.com/posts/mysql/</guid>
-      <description>draft: false toc: true [params] toc = true
-#~/#!/usr/bin/env bash #!/bin/bash #配置初始安装环境，安装依赖包 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;amp;&amp;amp; yum makecache rpm -qa | grep mariadb rpm -e mariadb-libs --nodeps #卸载mariadb以免与MySQL冲突 rm -rf /etc/my* yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4 #监测用户和组是否存在，不存在则创建 groups mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql组已存在&amp;#34; else groupadd -r mysql fi id mysql &amp;gt;&amp;gt;/dev/null if [ $?</description>
+      <description>#~/#!/usr/bin/env bash #!/bin/bash #配置初始安装环境，安装依赖包 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;amp;&amp;amp; yum makecache rpm -qa | grep mariadb rpm -e mariadb-libs --nodeps #卸载mariadb以免与MySQL冲突 rm -rf /etc/my* yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4 #监测用户和组是否存在，不存在则创建 groups mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql组已存在&amp;#34; else groupadd -r mysql fi id mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;#34;mysql用户已存在&amp;#34; else useradd -r -g mysql -s /bin/false -M mysql fi #Create DIRS mkdir /mysql /data mkdir /var/log/mysql mkdir /var/run/mysqld/ chown -R mysql:mysql /usr/local/mysql /data /var/run/mysqld/ #Download Source code wget -O /mysql/mysql-boost-5.</description>
     </item>
     
     <item>
