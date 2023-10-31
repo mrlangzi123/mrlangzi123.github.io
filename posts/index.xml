@@ -6,73 +6,60 @@
     <description>Recent content in Posts on Lang ZI blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Aug 2023 14:46:09 +0800</lastBuildDate><atom:link href="https://blog.aw35.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 14:46:09 +0800</lastBuildDate>
+    <atom:link href="https://blog.aw35.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mysql源码编译安装</title>
       <link>https://blog.aw35.com/posts/mysql/</link>
       <pubDate>Mon, 07 Aug 2023 14:46:09 +0800</pubDate>
-      
       <guid>https://blog.aw35.com/posts/mysql/</guid>
       <description>#!/bin/bash #配置初始安装环境，安装依赖包 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo &amp;amp;&amp;amp; yum makecache rpm -qa | grep mariadb rpm -e mariadb-libs --nodeps #卸载mariadb以免与MySQL冲突 rm -rf /etc/my* yum install -y wget vim bash-completion yum-utils gcc gcc-c++ openssl openssl-devel bison ncurses ncurses-devel cmake libaio-devel m4 #监测用户和组是否存在，不存在则创建 groups mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;quot;mysql组已存在&amp;quot; else groupadd -r mysql fi id mysql &amp;gt;&amp;gt;/dev/null if [ $? == 0 ] then echo &amp;quot;mysql用户已存在&amp;quot; else useradd -r -g mysql -s /bin/false -M mysql fi #Create DIRS mkdir /mysql /data mkdir /var/log/mysql mkdir /var/run/mysqld/ chown -R mysql:mysql /usr/local/mysql /data /var/run/mysqld/ #Download Source code wget -O /mysql/mysql-boost-5.</description>
     </item>
-    
     <item>
       <title>源码编译安装Mysql-5.7.43</title>
       <link>https://blog.aw35.com/posts/rich-content/</link>
       <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/rich-content/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>How to enable table of content ?</title>
       <link>https://blog.aw35.com/posts/table-of-content/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/table-of-content/</guid>
       <description>Table of content This theme supports displaying table of content in blog posts.
 To enable it, globally set toc to true in config.toml:
 [params] toc = true This will enable table of content for all posts. If you want to enable it for a specific post, add toc = true to the front matter of the post:
 --- title: How to enable table of content date: 2023-05-02 toc: true --- </description>
     </item>
-    
     <item>
       <title>Math Typesetting</title>
       <link>https://blog.aw35.com/posts/math-typesetting/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/math-typesetting/</guid>
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using
 &lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Markdown Syntax Guide</title>
       <link>https://blog.aw35.com/posts/markdown-syntax/</link>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Placeholder Text</title>
       <link>https://blog.aw35.com/posts/placeholder-text/</link>
       <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Emoji Support</title>
       <link>https://blog.aw35.com/posts/emoji-support/</link>
       <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.aw35.com/posts/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

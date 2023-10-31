@@ -5,6 +5,7 @@
     <link>https://blog.aw35.com/categories/</link>
     <description>Recent content in Categories on Lang ZI blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.aw35.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://blog.aw35.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
