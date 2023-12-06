@@ -27,18 +27,14 @@
       <link>https://blog.aw35.com/posts/table-of-content/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       <guid>https://blog.aw35.com/posts/table-of-content/</guid>
-      <description>Table of content This theme supports displaying table of content in blog posts.
-To enable it, globally set toc to true in config.toml:
-[params] toc = true This will enable table of content for all posts. If you want to enable it for a specific post, add toc = true to the front matter of the post:
---- title: How to enable table of content date: 2023-05-02 toc: true --- </description>
+      <description>Table of content This theme supports displaying table of content in blog posts.&#xA;To enable it, globally set toc to true in config.toml:&#xA;[params] toc = true This will enable table of content for all posts. If you want to enable it for a specific post, add toc = true to the front matter of the post:&#xA;--- title: How to enable table of content date: 2023-05-02 toc: true --- </description>
     </item>
     <item>
       <title>Math Typesetting</title>
       <link>https://blog.aw35.com/posts/math-typesetting/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
       <guid>https://blog.aw35.com/posts/math-typesetting/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using
-&lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using&#xA;&lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
